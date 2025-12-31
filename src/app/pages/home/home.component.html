@@ -1,0 +1,27 @@
+<div class="hero">
+  <div class="container">
+    <img src="images/luisa.jpeg" alt="Luisa Navarro – Natural Wellness Curator" class="profile-pic" loading="lazy"/>
+
+    <h1>My Wellness Picks on SensationBrands</h1>
+
+    <p class="subtitle">
+      Trusted, natural products I personally use and recommend: aromatherapy oils, pain relief creams, healing jewelry, and clean beauty.
+    </p>
+
+    <div class="products">
+      <div class="product-card" *ngFor="let product of products">
+        <img [src]="product.image" [alt]="product.name" loading="lazy" />
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+      </div>
+    </div>
+
+    <a routerLink="/go" class="cta-button">
+      👉 Shop My Collection on SensationBrands
+    </a>
+
+    <p class="trust-note">
+      All products ship directly from SensationBrands — authentic, high-quality, and backed by satisfaction guarantee.
+    </p>
+  </div>
+</div>

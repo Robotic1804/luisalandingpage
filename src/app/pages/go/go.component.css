@@ -1,0 +1,9 @@
+/* src/app/pages/go/go.component.scss */
+.redirecting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: #555;
+}
