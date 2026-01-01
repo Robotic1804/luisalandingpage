@@ -1,0 +1,39 @@
+<div *ngIf="showQuiz" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+  <div class="bg-white rounded-2xl p-8 max-w-md w-full relative">
+    <button
+      (click)="closeQuiz()"
+      class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    
+    <div *ngIf="quizStep < quizQuestions.length; else resultTemplate">
+      <h3 class="text-2xl font-bold mb-4">Find Your Perfect Product</h3>
+      <p class="text-gray-600 mb-2">Question {{ quizStep + 1 }} of {{ quizQuestions.length }}</p>
+      <p class="text-lg font-semibold mb-4">{{ quizQuestions[quizStep].question }}</p>
+      <div class="space-y-3">
+        <button
+          *ngFor="let option of quizQuestions[quizStep].options; let idx = index"
+          (click)="nextQuizStep()"
+          class="w-full p-4 text-left border-2 border-gray-200 rounded-lg hover:border-purple-500 hover:bg-purple-50 transition-all"
+        >
+          {{ option }}
+        </button>
+      </div>
+    </div>
+    
+    <ng-template #resultTemplate>
+      <div class="text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-500 mx-auto mb-4"><polyline points="20 6 9 17 4 12"/></svg>
+        <h3 class="text-2xl font-bold mb-4">Perfect Match Found!</h3>
+        <p class="text-gray-600 mb-6">Based on your answers, I recommend starting with our Aromatherapy Oils and Pain Relief Cream.</p>
+        <button
+          (click)="closeQuiz()"
+          class="bg-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-purple-700"
+        >
+          Contact Me for Details
+        </button>
+      </div>
+    </ng-template>
+  </div>
+</div>

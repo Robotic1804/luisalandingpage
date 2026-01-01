@@ -1,29 +1,116 @@
-<div class="hero">
-  <div class="container">
-    <img src="images/luisa.jpeg" alt="Luisa Navarro – Natural Wellness Curator" class="profile-pic" loading="lazy"/>
+<div class="relative bg-gradient-to-r from-purple-600 to-indigo-600 text-white overflow-hidden">
+  <div class="absolute inset-0 bg-black opacity-10"></div>
+  <div class="container mx-auto px-4 py-20 relative z-10">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="mb-6 flex flex-wrap justify-center gap-2">
+        <span
+          class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-sm"
+        >
+          ✨ 300+ Happy Customers
+        </span>
+        <span
+          class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-sm"
+        >
+          🏆 5-Star Rated
+        </span>
+      </div>
 
-    <h1>My Wellness Picks on SensationBrands</h1>
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+        Transform Your Health Naturally with Luisa Navarro
+      </h1>
+      <p class="text-xl md:text-2xl mb-8 text-purple-100">
+        Trusted wellness products backed by science. Personal service you deserve.
+      </p>
 
-    <p class="subtitle">
-      Trusted, natural products I personally use and recommend: aromatherapy oils, pain relief creams, healing jewelry, and clean beauty.
-    </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+        <a
+          href="#products"
+          class="bg-white text-purple-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-xl"
+        >
+          🛍️ Shop My Collection
+        </a>
+        <button
+          (click)="showLeadMagnet = true"
+          class="bg-purple-800 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-purple-900 transition-all border-2 border-white"
+        >
+          💝 Get 10% Off First Order
+        </button>
+      </div>
 
-    <div class="products">
-      <div class="product-card" *ngFor="let product of products">
-        <img [src]="product.image" [alt]="product.name" loading="lazy" />
-        <h3>{{ product.name }}</h3>
-        <p>{{ product.description }}</p>
+      <!-- Trust Badges -->
+      <div class="flex flex-wrap justify-center gap-6 text-sm">
+        <div class="flex items-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+          <span>30-Day Guarantee</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M16.5 9.4l-9-5.19M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+            />
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+            <line x1="12" y1="22.08" x2="12" y2="12" />
+          </svg>
+          <span>Secure Shipping</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="8" r="7" />
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+          </svg>
+          <span>Authentic Products</span>
+        </div>
       </div>
     </div>
-
-    <a routerLink="/go" class="cta-button">
-      👉 Shop My Collection on SensationBrands
-    </a>
-
-    <p class="trust-note">
-      All products ship directly from SensationBrands — authentic, high-quality, and backed by satisfaction guarantee.
-    </p>
   </div>
 </div>
 
+<!-- About Section -->
+<app-about></app-about>
+
+<!-- Products Section -->
+<app-products [products]="products"></app-products>
+
+<!-- Testimonials Section -->
+<app-testimonial [testimonials]="testimonials"></app-testimonial>
+
+<!-- Footer Section -->
+<app-footer></app-footer>
+
+<!-- Lead Magnet Banner -->
+<app-lead-magnet-modal (claimDiscount)="showLeadMagnet = true"></app-lead-magnet-modal>
+
+<!-- WhatsApp Widget -->
 <app-whatsapp-widget></app-whatsapp-widget>

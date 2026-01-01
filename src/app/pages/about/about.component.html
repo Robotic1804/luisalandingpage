@@ -1,0 +1,55 @@
+<div class="container mx-auto px-4 py-16">
+  <div class="max-w-4xl mx-auto">
+    <div class="bg-white rounded-2xl shadow-xl p-8 md:flex gap-8 items-center">
+      <img
+        src="images/luisa.jpeg"
+        alt="Luisa Navarro"
+        class="w-48 h-48 rounded-full object-cover mx-auto md:mx-0 mb-6 md:mb-0 shadow-lg"
+      />
+      <div class="flex-1">
+        <h2 class="text-3xl font-bold mb-4 text-gray-800">Meet Luisa Navarro</h2>
+        <p class="text-gray-600 mb-4 leading-relaxed">
+          Hi! I'm Luisa, your personal wellness consultant. For over 5 years, I've helped hundreds of people 
+          discover natural solutions for better health. I personally use every product I recommend because 
+          I believe in their power to transform lives.
+        </p>
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          What sets me apart? <strong>Personal service.</strong> I'm here to answer your questions, 
+          provide guidance, and support your wellness journey every step of the way.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="https://wa.me/3236024043"
+            class="flex items-center gap-2 bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-all"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            WhatsApp Me
+          </a>
+          <a
+            href="mailto:luisaamandanavarro63@gmail.com"
+            class="flex items-center gap-2 bg-gray-200 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-300 transition-all"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Email Me
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Why Buy from Luisa -->
+<div class="bg-gradient-to-r from-purple-100 to-indigo-100 py-16">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Why Buy From Luisa?</h2>
+    <div class="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+      @for (item of whyBuyItems; track item.title) {
+        <div class="bg-white p-6 rounded-xl text-center shadow-lg hover:shadow-xl transition-all">
+          <div class="text-4xl mb-3">{{ item.icon }}</div>
+          <h3 class="font-bold text-lg mb-2 text-gray-800">{{ item.title }}</h3>
+          <p class="text-gray-600 text-sm">{{ item.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</div>

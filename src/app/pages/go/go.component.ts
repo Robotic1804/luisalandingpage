@@ -7,6 +7,7 @@ import { TrackingService } from '../../core/service/tracking.service';
   selector: 'app-go',
   templateUrl: './go.component.html',
   styleUrls: ['./go.component.css'],
+  standalone: true
 })
 export class GoComponent implements OnInit {
   private router = inject(Router);
