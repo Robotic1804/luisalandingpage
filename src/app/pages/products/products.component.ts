@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ProductsComponent implements OnInit {
   @Input() products: any[] = [];
+  @Output() showQuizChange = new EventEmitter<boolean>();
 
   constructor() { }
 
@@ -17,8 +18,7 @@ export class ProductsComponent implements OnInit {
   }
 
   setShowQuiz(show: boolean) {
-    // Handle quiz display logic here
-    console.log('Show quiz:', show);
+    this.showQuizChange.emit(show);
   }
 
 }

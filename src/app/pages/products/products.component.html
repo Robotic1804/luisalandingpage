@@ -5,58 +5,61 @@
     <p class="text-xl text-gray-600 mb-6">Science-backed products for real results</p>
     <button
       (click)="setShowQuiz(true)"
-      class="bg-purple-100 text-purple-700 px-6 py-3 rounded-lg font-semibold hover:bg-purple-200 transition-all"
-    >
+      class="bg-purple-100 text-purple-700 px-6 py-3 rounded-lg font-semibold hover:bg-purple-200 transition-all">
       🎯 Take Quiz: Find Your Perfect Product (30 sec)
     </button>
   </div>
 
   <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-    <div *ngFor="let product of products; let idx = index" class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all transform hover:scale-105">
-      <div class="relative">
-        <img
-          [src]="product.image"
-          [alt]="product.name"
-          class="w-full h-64 object-cover"
-        />
-        <div class="absolute top-4 right-4 bg-red-500 text-white px-4 py-2 rounded-full font-bold text-sm">
-          ⚡ Limited Stock
+    @for (product of products; track $index) {
+      <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all transform hover:scale-105">
+        <div class="relative">
+          <img
+            [src]="product.image"
+            [alt]="product.name"
+            class="w-full h-64 object-cover"
+          />
+          <div class="absolute top-4 right-4 bg-red-500 text-white px-4 py-2 rounded-full font-bold text-sm">
+            ⚡ Limited Stock
+          </div>
         </div>
-      </div>
-      
-      <div class="p-6">
-        <h3 class="text-2xl font-bold mb-2 text-gray-800">{{product.name}}</h3>
-        <p class="text-gray-600 mb-4">{{product.description}}</p>
         
-        <div class="bg-purple-50 p-4 rounded-lg mb-4">
-          <p class="font-bold text-purple-800 mb-2">✨ {{product.results}}</p>
-          <ul class="space-y-2">
-            <li *ngFor="let benefit of product.benefits" class="flex items-start gap-2 text-sm text-gray-700">
-              <span class="text-green-500 mt-1 shrink-0">✓</span>
-              <span>{{benefit}}</span>
-            </li>
-          </ul>
-        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-2 text-gray-800">{{product.name}}</h3>
+          <p class="text-gray-600 mb-4">{{product.description}}</p>
+          
+          <div class="bg-purple-50 p-4 rounded-lg mb-4">
+            <p class="font-bold text-purple-800 mb-2">✨ {{product.results}}</p>
+            <ul class="space-y-2">
+              @for (benefit of product.benefits; track $index) {
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <span class="text-green-500 mt-1 shrink-0">✓</span>
+                  <span>{{benefit}}</span>
+                </li>
+              }
+            </ul>
+          </div>
 
-        <div class="flex gap-3">
-          <a
-            href="https://wa.me/1234567890"
-            class="flex-1 bg-purple-600 text-white text-center py-3 rounded-lg font-bold hover:bg-purple-700 transition-all"
-          >
-            Shop Now
-          </a>
-          <button class="bg-gray-100 text-gray-700 px-4 py-3 rounded-lg hover:bg-gray-200 transition-all">
-            Learn More
-          </button>
+          <div class="flex gap-3">
+            <a
+              href="https://wa.me/13236024043"
+              class="flex-1 bg-purple-600 text-white text-center py-3 rounded-lg font-bold hover:bg-purple-700 transition-all"
+            >
+              Shop Now
+            </a>
+            <button class="bg-gray-100 text-gray-700 px-4 py-3 rounded-lg hover:bg-gray-200 transition-all">
+              Learn More
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    }
   </div>
 
   <div class="text-center mt-12">
     <a
-      href="https://wa.me/1234567890"
-      class="inline-block bg-linear-to-r from-purple-600 to-pink-600 text-white px-12 py-4 rounded-lg font-bold text-lg hover:shadow-xl transition-all transform hover:scale-105"
+      href="https://wa.me/13236024043"
+      class="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-white px-12 py-4 rounded-lg font-bold text-lg hover:shadow-xl transition-all transform hover:scale-105"
     >
       📱 View Full Collection & Prices
     </a>

@@ -101,7 +101,7 @@
 <app-about></app-about>
 
 <!-- Products Section -->
-<app-products [products]="products"></app-products>
+<app-products [products]="products" (showQuizChange)="showQuiz = $event"></app-products>
 
 <!-- Testimonials Section -->
 <app-testimonial [testimonials]="testimonials"></app-testimonial>
@@ -111,6 +111,15 @@
 
 <!-- Lead Magnet Banner -->
 <app-lead-magnet-modal (claimDiscount)="showLeadMagnet = true"></app-lead-magnet-modal>
+
+<!-- Quiz Modal -->
+<app-quiz-modal 
+  [showQuiz]="showQuiz" 
+  [quizQuestions]="quizQuestions" 
+  [quizStep]="quizStep"
+  (showQuizChange)="showQuiz = $event"
+  (quizStepChange)="quizStep = $event">
+</app-quiz-modal>
 
 <!-- WhatsApp Widget -->
 <app-whatsapp-widget></app-whatsapp-widget>

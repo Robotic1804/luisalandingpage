@@ -5,6 +5,7 @@ import { AboutComponent } from '../about/about.component';
 import { ProductsComponent } from '../products/products.component';
 import { TestimonialComponent } from '../testimonial/testimonial.component';
 import { LeadMagnetModalComponent } from '../lead-magnet-modal/lead-magnet-modal.component';
+import { QuizModalComponent } from '../quiz-modal/quiz-modal.component';
 import { FooterComponent } from '../footer/footer.component';
 
 @Component({
@@ -18,6 +19,7 @@ import { FooterComponent } from '../footer/footer.component';
     ProductsComponent,
     TestimonialComponent,
     LeadMagnetModalComponent,
+    QuizModalComponent,
     FooterComponent,
   ],
   standalone: true,
