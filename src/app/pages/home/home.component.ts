@@ -81,18 +81,24 @@ export class HomeComponent implements OnInit {
       text: "Luisa's products changed my life! The pain cream works in minutes and the aromatherapy oils help me sleep better.",
       rating: 5,
       product: 'Pain Cream & Oils',
+      verified: true,
+      date: '2 weeks ago',
     },
     {
       name: 'James R.',
       text: "I've been using Immunocal for 3 months. My energy levels are amazing and I haven't been sick once!",
       rating: 5,
       product: 'Immunocal',
+      verified: true,
+      date: '1 month ago',
     },
     {
       name: 'Sofia M.',
       text: 'The crystal jewelry is stunning and I love the personal service. Luisa truly cares about her customers!',
       rating: 5,
       product: 'Crystal Jewelry',
+      verified: true,
+      date: '3 weeks ago',
     },
   ];
 

@@ -28,7 +28,7 @@ import { CommonModule } from '@angular/common';
   
   
 export class TestimonialComponent {
-  testimonials: Testimonial[] = [
+  @Input() testimonials: Testimonial[] = [
     {
       name: 'Maria G.',
       product: 'Deep Relief Pain Cream',
